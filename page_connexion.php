@@ -40,7 +40,7 @@
                 echo "<p class= 'Erreur'>".$erreur."</p>"  ;// permet de faire l'affichage de l'erreur si elle se produit
             }*/
             ?>
-            <form  class="contact-form" action="" method="POST"> <!-- Dans ce formulaire, on demande à l'utilisateur son login et son mot de passe--->
+            <form class="contact-form" action="" method="POST"> <!-- Dans ce formulaire, on demande à l'utilisateur son login et son mot de passe--->
                 <input type="text" name="login" placeholder="Votre Identifiant" required style="text-align: center;">
                 <input type="password" name="mdp" placeholder="Mot de Passe" required style="text-align: center;">
                 <input type="submit" value="Valider" name="boutton-valider">
@@ -48,7 +48,7 @@
                     <a href="./modif_mdp.php">Mot de passe oublier?</a>
                 </p>
                 <p>
-                    Pas de compte? Créez en un <a href="./inscription.php"> ici <a>
+                    Pas de compte? Créez en un <a href="./selection.php"> ici <a>
                 </p>
             </form>
         </div>

@@ -44,11 +44,26 @@ if(isset($_POST['boutton-valider'])){
                 <label>Entrez vos informations personnelles</label>
                 <input type="text" name="nom" placeholder="Nom" required style="text-align: center;">
                 <input type="text" name="prenom" placeholder="Prenom" required style="text-align: center;">
-                <input type="text" name="mail" placeholder="Adresse Mail" required style="text-align: center;">
+                <input type="text" name="mail" placeholder="Adresse Mail (exemple : exemple@exemple.fr)" required style="text-align: center;">
+                <!-- Formulaire de tri -->
+                <div class="center-form">
+                    <label for="etude">Choississez votre niveau d'étude :</label>
+                    <select id="etude" required>
+                        <option value="" style="text-align: center;">--- Étude en cours ---</option>
+                        <option value="3eme" style="text-align: center;">3ème</option>
+                        <option value="2nd" style="text-align: center;">2nd</option>
+                        <option value="1ere" style="text-align: center;">1ère</option>
+                        <option value="CAP" style="text-align: center;">CAP</option>
+                        <option value="terminale" style="text-align: center;">Terminale</option>
+                        <option value="1ereBTS" style="text-align: center;">1èreBTS</option>
+                        <option value="2ndBTS" style="text-align: center;">2ndBTS</option>
+                        <option value="licence" style="text-align: center;">Licence</option>
+                    </select>
+                </div>
                 <input type="password" name="mdp1" placeholder="Mot de passe" required style="text-align: center;">
                 <input type="submit" value="Valider" name="boutton-valider">
                 <p>
-                    Vous avez déjà un compte? <a href="./page_connexion.php"> Connectez vous </a>
+                    Avez-vous déjà un compte? <a href="./page_connexion.php"> Connectez vous </a>
                 </p>
             </form>
         </section> 

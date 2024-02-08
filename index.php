@@ -13,42 +13,44 @@
     <body>
         <!-- Barre de navigation -->
         <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="./logo.png" alt="Logo">
+        </div>
             <ul class="navbar-menu">
+                <a href="./ajout_cours.php" class="button-56" style="color: white;"><img src="./add.png" alt="">Ajouter un cour</a>
                 <form>
                     <div>
                         <input
-                        type="search"
-                        id="maRecherche"
-                        name="q"
-                        placeholder="Recherche sur le site…"
-                        required />
+                            type="search"
+                            id="maRecherche"
+                            name="q"
+                            placeholder="Recherche sur le site…"
+                            required />
                         <button>Rechercher</button>
                         <span class="validity"></span>
                     </div>
                 </form>
                 <a href="./page_connexion.php" class="button-55">Se connecter</a>
-                <a href="./inscription.php" class="button-56" style="color: white;"> S'inscrire</a>
+                <a href="./selection.php" class="button-56" style="color: white;"> S'inscrire</a>
+                <div class="profil">
+                    <?php 
+                        /*require_once('co_bdd.php');  
+                        session_start();
+                        if(isset($_SESSION['login'])) {
+                            $Elogin = $_SESSION['login'];
+                            $mdp = $_SESSION['mdp'];
+                            $query = "SELECT * FROM enseignants WHERE E_id = '$Elogin' AND E_mdp = '$mdp'";
+                            $result = mysqli_query($lien, $query);
+                            if(!$result) {
+                                exit("Error executing query: " . mysqli_error($lien));
+                            }
+                            $enseignant = mysqli_fetch_assoc($result);
+                            echo "<p>" . $enseignant['E_nom'] . " " . $enseignant['E_prenom'] . " !</p>";
+                        }*/
+                    ?>
+                </div>
             </ul>
         </nav>
-
-        <main>   
-            <?php 
-                /*require_once('co_bdd.php');  
-                session_start();
-                if(isset($_SESSION['login'])) {
-                    $Elogin = $_SESSION['login'];
-                    $mdp = $_SESSION['mdp'];
-                    $query = "SELECT * FROM enseignants WHERE E_id = '$Elogin' AND E_mdp = '$mdp'";
-                    $result = mysqli_query($lien, $query);
-                    if(!$result) {
-                        exit("Error executing query: " . mysqli_error($lien));
-                    }
-                    $enseignant = mysqli_fetch_assoc($result);
-                    echo "<h1>Bienvenu(e) sur notre site " . $enseignant['E_nom'] . " " . $enseignant['E_prenom'] . " !</h1>";
-                }*/
-            ?>
-        </main>
-
         <footer>
             <h1> NOUS CONTACTER </h1>
             <h2>MARQUEZ Lucas et PEREZ Edouard , 102 Rue Sylvabelle, 13006 Marseille, France </h2>

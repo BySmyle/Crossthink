@@ -77,7 +77,7 @@ input:invalid ~ span:after {
   }
 
 input[type="submit"] {
-    background-color: purple;
+    background-color: rgb(226, 0, 0);
     color: #fff;
     margin-top: 1em;
     padding: 10px 20px;
@@ -87,7 +87,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: rgb(98, 0, 98);
+    background-color: rgb(173, 0, 0);
 }
 
 .button-55 {
@@ -119,11 +119,11 @@ input[type="submit"]:hover {
   }
   
   .button-55:focus {
-    color: #171e29;
+    color: purple;
   }
   
   .button-55:hover {
-    border-color: #06f;
+    border-color: #e1e1e1;
     color: #06f;
     fill: #06f;
   }
@@ -142,7 +142,7 @@ input[type="submit"]:hover {
 
   .button-56 {
     align-items: center;
-    background-color: black;
+    background-color: rgb(226, 0, 0);
     border: 2px solid #fff;
     border-radius: 10px;
     box-sizing: border-box;
@@ -169,19 +169,17 @@ input[type="submit"]:hover {
   }
   
   .button-56:focus {
-    color: #171e29;
+    color: rgb(173, 0, 0);
   }
   
   .button-56:hover {
-    border-color: #06f;
-    color: #06f;
-    fill: #06f;
+    background-color:rgb(173, 0, 0);
+    fill: rgb(173, 0, 0);
   }
   
   .button-56:active {
-    border-color: #06f;
-    color: #06f;
-    fill: #06f;
+    border-color: rgb(104, 0, 0);
+    fill: rgb(104, 0, 0);
   }
   
   @media (min-width: 768px) {
@@ -189,6 +187,12 @@ input[type="submit"]:hover {
       min-width: 170px;
     }
   }
+
+.button-56>img{
+    width: 20px; 
+    height: auto;
+    border-radius: 10%;
+}
 
 footer {
     background-color: #333;
@@ -215,6 +219,12 @@ form{
     margin: 0 auto;
     text-align: center;
     padding: 10px; /* Ajout d'une marge intérieure */
+}
+
+.navbar-logo img {
+    width: 150px; 
+    height: auto;
+    border-radius: 10%;
 }
 
 .navbar {
