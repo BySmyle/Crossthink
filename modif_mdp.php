@@ -27,8 +27,8 @@
     ?>
     <section>
       <form class="contact-form" method="POST"> 
-            <input type="text" name="nvMdp" placeholder="Votre nouveau mote de passe" required style="text-align: center;">
-            <input type="text" name="vaiderNvMdp" placeholder="Validez votre nouveau mote de passe" required style="text-align: center;">
+            <input type="password" name="nvMdp" placeholder="Votre nouveau mote de passe" required style="text-align: center;">
+            <input type="password" name="vaiderNvMdp" placeholder="Validez votre nouveau mote de passe" required style="text-align: center;">
             <input type="submit" value="Valider" name="validation">
       </form>
       </section>

@@ -37,22 +37,33 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         <form class="contact-form" method="POST" action="">
                 <input type="text" name="titre" placeholder="Titre" required style="text-align: center;"/>
                 <input type="text" name="description" placeholder="Description" required style="text-align: center;"/><div class="center-form">
-                    <label for="etude">Choississez le niveau d'étude requis :</label>
-                    <select id="etude" required>
-                        <option value="" style="text-align: center;">--- Choisir un niveau ---</option>
-                        <option value="3eme" style="text-align: center;">3ème</option>
-                        <option value="2nd" style="text-align: center;">2nd</option>
-                        <option value="1ere" style="text-align: center;">1ère</option>
-                        <option value="CAP" style="text-align: center;">CAP</option>
-                        <option value="terminale" style="text-align: center;">Terminale</option>
-                        <option value="1ereBTS" style="text-align: center;">1èreBTS</option>
-                        <option value="2ndBTS" style="text-align: center;">2ndBTS</option>
-                        <option value="licence" style="text-align: center;">Licence</option>
-                    </select>
-                </div>
-                <input type="text" name="duree" placeholder="Durée du cour" required style="text-align: center;">
-                <input type="text">
+                <label for="etude">Choississez le niveau d'étude requis :</label>
+                <select id="etude" required>
+                    <option value="" style="text-align: center;">--- Choisir un niveau ---</option>
+                    <option value="3eme" style="text-align: center;">3ème</option>
+                    <option value="2nd" style="text-align: center;">2nd</option>
+                    <option value="1ere" style="text-align: center;">1ère</option>
+                    <option value="CAP" style="text-align: center;">CAP</option>
+                    <option value="terminale" style="text-align: center;">Terminale</option>
+                    <option value="1ereBTS" style="text-align: center;">1èreBTS</option>
+                    <option value="2ndBTS" style="text-align: center;">2ndBTS</option>
+                    <option value="licence" style="text-align: center;">Licence</option>
+                </select>
+                <input type="time" id="duree" name="duree" min="09:00" max="18:00" required style="text-align: center;"/>
+                <input type="text" name="cout" placeholder="Coût du cour" required style="text-align: center;">
+                <!--<form  name=formu action="ajout_date.php"  method="POST">  
+                    <input type="date" placeholder="Date debut cours" value="<?php if (isset($_POST['date_debut_cours'])){echo $_POST['date_debut_cours'];} ?>" maxlength="10" name="date_debut_cours" id="date_debut_cours" class="calendrier" required onClick="ds_sh(this);"><br>
+                    <input type="date" placeholder="Date  Fin du cours" value="<?php if (isset($_POST['date_fin_cours'])){echo $_POST['date_fin_cours'];} ?>" maxlength="10" name="date_fin_cours" id="date_fin_cours" class="calendrier" onClick="ds_sh(this);" required><br>
+                </form>-->
+                <label for="etude">Choississez les matériaux requis :</label>
+                <select id="etude" required>
+                    <option value="" style="text-align: center;">--- Choisir un matériau ---</option>
+                    <option value="ordi" style="text-align: center;">Ordinateur</option>
+                    <option value="calculatrice" style="text-align: center;">Calculatrice</option>
+                    <option value="regle" style="text-align: center;">Outils de constructions de formes (règles, équerre, etc)</option>
+                </select>
                 <input type="submit" value="Valider" name="boutton-valider">
         </form>
     </body>
+    <script src="./script.js"></script>
 </html>
