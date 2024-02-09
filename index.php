@@ -82,11 +82,32 @@
         </div>
         <footer>
             <h1> NOUS CONTACTER </h1>
+            <h2>Suivez nous sur nos réseaux : </h2>
             <div class="reseaux">
-                <img src="./instagram.png" alt="insta">
-                <p style="margin-left: 1em;">
-                    @crossthink
-                </p>
+                <div class="insta">
+                    <img src="./instagram.png" alt="insta">
+                    <p style="margin-left: 1em;">
+                        @crossthink
+                    </p>
+                </div>
+                <div class="snap">
+                    <img src="./snapchat.png" alt="snap">
+                    <p style="margin-left: 1em;">
+                        crossthink
+                    </p>
+                </div>
+                <div class="tweeter">
+                    <img src="./twitter.png" alt="tweet">
+                    <p style="margin-left: 1em;">
+                        crossthink
+                    </p>
+                </div>
+                <div class="facebook">
+                    <img src="./facebook.png" alt="facebook">
+                    <p style="margin-left: 1em;">
+                        crossthink
+                    </p>
+                </div>
             </div>
             <h2>MARQUEZ Lucas et PEREZ Edouard , 102 Rue Sylvabelle, 13006 Marseille, France </h2>
             <h2>123-456-7890 </h2>

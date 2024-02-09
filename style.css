@@ -235,7 +235,25 @@ input[type="submit"]:hover {
     margin-top: 2em;
 }
 
-.reseaux{
+.insta{
+    display: flex;
+    flex-direction: row;
+    margin-left: 50em;
+}
+
+.snap{
+    display: flex;
+    flex-direction: row;
+    margin-left: 50em;
+}
+
+.tweeter{
+    display: flex;
+    flex-direction: row;
+    margin-left: 50em;
+}
+
+.facebook{
     display: flex;
     flex-direction: row;
     margin-left: 50em;
@@ -261,7 +279,22 @@ input[type="submit"]:hover {
     height: 45%;
 }
 
-.reseaux>img{
+.insta>img{
+    width: 3%;
+    height: 10%;
+}
+
+.snap>img{
+    width: 3%;
+    height: 10%;
+}
+
+.tweeter>img{
+    width: 3%;
+    height: 10%;
+}
+
+.facebook>img{
     width: 3%;
     height: 10%;
 }
