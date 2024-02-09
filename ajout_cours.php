@@ -52,8 +52,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                 <input type="time" id="duree" name="duree" min="09:00" max="18:00" required style="text-align: center;"/>
                 <input type="text" name="cout" placeholder="Coût du cour" required style="text-align: center;">
                 <!--<form  name=formu action="ajout_date.php"  method="POST">  
-                    <input type="date" placeholder="Date debut cours" value="<?php if (isset($_POST['date_debut_cours'])){echo $_POST['date_debut_cours'];} ?>" maxlength="10" name="date_debut_cours" id="date_debut_cours" class="calendrier" required onClick="ds_sh(this);"><br>
-                    <input type="date" placeholder="Date  Fin du cours" value="<?php if (isset($_POST['date_fin_cours'])){echo $_POST['date_fin_cours'];} ?>" maxlength="10" name="date_fin_cours" id="date_fin_cours" class="calendrier" onClick="ds_sh(this);" required><br>
+                    <input type="date" placeholder="Date debut cours" value="<?php //if (isset($_POST['date_debut_cours'])){echo $_POST['date_debut_cours'];} ?>" maxlength="10" name="date_debut_cours" id="date_debut_cours" class="calendrier" required onClick="ds_sh(this);"><br>
+                    <input type="date" placeholder="Date  Fin du cours" value="<?php //if (isset($_POST['date_fin_cours'])){echo $_POST['date_fin_cours'];} ?>" maxlength="10" name="date_fin_cours" id="date_fin_cours" class="calendrier" onClick="ds_sh(this);" required><br>
                 </form>-->
                 <label for="etude">Choississez les matériaux requis :</label>
                 <select id="etude" required>
@@ -62,6 +62,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                     <option value="calculatrice" style="text-align: center;">Calculatrice</option>
                     <option value="regle" style="text-align: center;">Outils de constructions de formes (règles, équerre, etc)</option>
                 </select>
+                <input type="number" name="nbEleves" placeholder="Nombre d'élèves par cours" required style="text-align: center;">
                 <input type="submit" value="Valider" name="boutton-valider">
         </form>
     </body>

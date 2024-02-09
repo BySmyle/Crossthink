@@ -26,7 +26,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     letter-spacing: 1.2px;
-    color: black;
+    color: white;
 }
 
 h1 {
@@ -192,6 +192,78 @@ input[type="submit"]:hover {
     width: 20px; 
     height: auto;
     border-radius: 10%;
+}
+
+.cours{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    background-color: #e1e1e1;
+    text-align: center;
+    width: 80%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(159, 162, 177, .8);
+}
+
+.sujet{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2em;
+    margin-right: -15em;
+}
+
+.lieu{
+    display: flex;
+    flex-direction: row;
+    margin-right: -15em;
+    margin-top: 2em;
+}
+
+.prof{
+    display: flex;
+    flex-direction: row;
+    margin-right: -10em;
+    margin-top: 2em;
+}
+
+.eleves{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2em;
+}
+
+.reseaux{
+    display: flex;
+    flex-direction: row;
+    margin-left: 50em;
+}
+
+.sujet>img{
+    width: 7%;
+    height: 50%;
+}
+
+.lieu>img{
+    width: 7%;
+    height: 45%;
+}
+
+.prof>img{
+    width: 7%;
+    height: 45%;
+}
+
+.eleves>img{
+    width: 5%;
+    height: 45%;
+}
+
+.reseaux>img{
+    width: 3%;
+    height: 10%;
 }
 
 footer {

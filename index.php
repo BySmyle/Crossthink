@@ -17,7 +17,7 @@
             <img src="./logo.png" alt="Logo">
         </div>
             <ul class="navbar-menu">
-                <a href="./ajout_cours.php" class="button-56" style="color: white;"><img src="./add.png" alt="">Ajouter un cour</a>
+                <a href="./ajout_cours.php" class="button-56" style="color: white;"><img src="./add.png" alt=""s style="margin-right: 10px;">Ajouter un cour</a>
                 <form>
                     <div>
                         <input
@@ -51,8 +51,43 @@
                 </div>
             </ul>
         </nav>
+        <div class="cours">
+            <div class="sujet">
+                <img src="./book.png" alt="livre">
+                <p style="margin-left: 1em;">
+                    Maths
+                </p>
+            </div>
+            <div class="lieu">
+                <img src="./location.png" alt="location">
+                <p style="margin-left: 1em;">
+                    Marseille(8ème)
+                </p>
+            </div>
+            <div class="prof">
+                <img src="./teacher.png" alt="prof">
+                <p style="margin-left: 1em;">
+                    Professeur : M. POLOCHON
+                </p>
+            </div>
+            <div class="eleves">
+                <img src="./user.png" alt="eleves">
+                <p>
+                    Nombre d'élèves disponible dans le cour : 30
+                </p>
+            </div>
+            <form action="">
+                <input type="submit" value="Adhérer au cour" name="boutton-valider">
+            </form>
+        </div>
         <footer>
             <h1> NOUS CONTACTER </h1>
+            <div class="reseaux">
+                <img src="./instagram.png" alt="insta">
+                <p style="margin-left: 1em;">
+                    @crossthink
+                </p>
+            </div>
             <h2>MARQUEZ Lucas et PEREZ Edouard , 102 Rue Sylvabelle, 13006 Marseille, France </h2>
             <h2>123-456-7890 </h2>
             <h2>© 2024</h2>
