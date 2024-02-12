@@ -1,5 +1,6 @@
 <?php
-    include('./co_bdd.php');
+    include('./co_bdd.php');  
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,9 +37,7 @@
                 <a href="./inscription.php" class="button-56" style="color: white;"> S'inscrire</a>
                 <div class="profil">
                     <?php 
-                        /*require_once('co_bdd.php');  
-                        session_start();
-                        if(isset($_SESSION['login'])) {
+                        /*if(isset($_SESSION['login'])) {
                             $Elogin = $_SESSION['login'];
                             $mdp = $_SESSION['mdp'];
                             $query = "SELECT * FROM enseignants WHERE E_id = '$Elogin' AND E_mdp = '$mdp'";
@@ -47,15 +46,14 @@
                                 exit("Error executing query: " . mysqli_error($lien));
                             }
                             $enseignant = mysqli_fetch_assoc($result);
-                            echo "<p>" . $enseignant['E_nom'] . " " . $enseignant['E_prenom'] . " !</p>";
+                            echo "<p>" . $utilisateur['E_nom'] . " " . $utilisateur['E_prenom'] . " !</p>";
                         }*/
                     ?>
                 </div>
             </ul>
         </nav>
-        <?php       
-            session_start();
-            if(isset($_SESSION['login'])) {
+        <?php
+            /*if(isset($_SESSION['login'])) {
                 $query = "SELECT NomFormation, DescFormation, lieu, competence, duree, cout, materiau, nbEleve FROM Formation";
                 $result = $query->fetchAll(PDO::FETCH_ASSOC);
                 $count = $query->rowCount();
@@ -97,7 +95,7 @@
                 echo '<a href="./payer.php" class="button-56" style="color: white;"> Adhérer au cour </a>';
             }
             echo '</div>'; 
-            }
+            }*/
 
         ?>
         <div class="cours">
