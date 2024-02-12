@@ -1,6 +1,7 @@
 <?php 
+    include('./co_bdd.php');
     /*session_start() ;
-    require_once('co_bdd.php');
+    
     if(isset($_POST['boutton-valider'])){ 
         if(isset($_POST['login']) && isset($_POST['mdp'])) { // les issests servent à verifier que l'utilisateur à bien rempli un login, un mot de passe et qu'il a bien valider ceci
             // donnes du formulaire mise en variable
@@ -48,7 +49,7 @@
                     <a href="./modif_mdp.php">Mot de passe oublier?</a>
                 </p>
                 <p>
-                    Pas de compte? Créez en un <a href="./selection.php"> ici <a>
+                    Pas de compte? Créez en un <a href="./inscription.php"> ici <a>
                 </p>
             </form>
         </div>

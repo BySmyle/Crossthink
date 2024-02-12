@@ -1,31 +1,27 @@
-<?php 
-/*session_start() ;
-require_once('co_bdd.php');
+<?php
+include('./co_bdd.php');
+session_start() ;
 if(isset($_POST['boutton-valider'])){ 
-    if(isset($_POST['nom']) && isset($_POST['prenom'])&& isset($_POST['classe']) && isset($_POST['mail'])&& isset($_POST['mdp1']) ) { // les issests servent à verifier que l'utilisateur à bien rempli un login, un mot de passe et qu'il a bien valider ceci
-        $mdp1 = $_POST['mdp1'] ;
-        $erreur = "" ;
-       //if(strcmp($mdp1,$mdp2 >0) || strcmp($mdp1,$mdp2 <0)){
-           // $erreur = "mot de passe différents !";
-           // echo strcmp($mdp1,$mdp2) ;
-            
-       // }
-        //else{
-            $mdp =$mdp1;
-            // donnes du formulaire mise en variable
-            $nom = htmlspecialchars($_POST['nom']) ;
-            $prenom = htmlspecialchars($_POST['prenom']) ;
-            $mail = htmlspecialchars($_POST['mail']);
-            $classe = htmlspecialchars($_POST['classe']) ;
-            //connection à la base de donnés sql
-
-            //Requete sql
-            $req = mysqli_query($lien , "INSERT INTO eleves(nom_eleve, prenom_eleve, mail,classe, mdp) VALUES ('$nom','$prenom', '$mail' ,'$classe','$mdp') ") ;//on verifie si le login et le mot de passe donnés existent bien dans la base de donnés
-            echo "Votre compte a crée avec succés";
-          
-       // }
+    if(isset($_POST['EmailUti']) && isset($_POST['MdpUti'])&& isset($_POST['NomUti']) && isset($_POST['PrenomUti']) && isset($_POST['profession']) && isset($_POST['TelephoneUti'])) { // les issests servent à verifier que l'utilisateur à bien rempli un login, un mot de passe et qu'il a bien valider ceci
+        $mail = $_POST['EmailUti'];
+        $mdp = $_POST['MdpUti'];
+        $nomUti = $_POST['NomUti'];
+        $prenomUti = $_POST['PrenomUti'];
+        $profession = $_POST['profession'];
+        $telUti = $_POST['TelephoneUti'];
+        $mdpHash = hash('sha256',$mdp.$sel);
+        $requete = $lien->prepare("INSERT INTO Formation (EmailUti, MdpUti, NomUti, PrenomUti, profession, TelephoneUti) VALUES (?, ?, ?, ?, ?, ?)");
+        $query = bindParam(1, $mail);
+        $query = bindParam(2, $mdpHash);
+        $query = bindParam(3, $nomUti);
+        $query = bindParam(4, $prenomUti);
+        $query = bindParam(5, $profession);
+        $query = bindParam(6, $telUti);
+        $requete = execute();
+        $result = $requete->fetchAll(PDO::FETCH_ASSOC);
+        $count = $requete->rowCount();
     }
-}*/
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -45,7 +41,19 @@ if(isset($_POST['boutton-valider'])){
                 <input type="text" name="nom" placeholder="Nom" required style="text-align: center;">
                 <input type="text" name="prenom" placeholder="Prenom" required style="text-align: center;">
                 <input type="text" name="mail" placeholder="Adresse Mail (exemple : exemple@exemple.fr)" required style="text-align: center;">
-                <!-- Formulaire de tri -->
+                <input type="tel" id="phone" name="phone" placeholder="Entrez votre numéro de téléphone (ex : 06-12-34-56-78)" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" required style="text-align: center;"/>
+                <div class="center-form">
+                    <label for="profession">Choississez votre profession :</label>
+                    <select id="profession" required>
+                        <option value="" style="text-align: center;">--- Profession ---</option>
+                        <option value="Eleves" style="text-align: center;">Élèves</option>
+                        <option value="profMath" style="text-align: center;">Professeur de maths</option>
+                        <option value="profFr" style="text-align: center;">Professeur de français</option>
+                        <option value="profEng" style="text-align: center;">Professeur d'anglais</option>
+                        <option value="profPhilo" style="text-align: center;">Professeur de philo</option>
+                    </select>
+                </div>
+                <a href="./ajout_profession.php" class="button-56" style="color: white;"><img src="./add.png" alt="">Ajouter une profession</a>
                 <div class="center-form">
                     <label for="etude">Choississez votre niveau d'étude :</label>
                     <select id="etude" required>

@@ -1,4 +1,6 @@
-
+<?php
+    include('./co_bdd.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -17,7 +19,7 @@
             <img src="./logo.png" alt="Logo">
         </div>
             <ul class="navbar-menu">
-                <a href="./ajout_cours.php" class="button-56" style="color: white;"><img src="./add.png" alt=""s style="margin-right: 10px;">Ajouter un cour</a>
+                <a href="./ajout_cours.php" class="button-56" style="color: white;"><img src="./add.png" alt="" style="margin-right: 10px;">Ajouter un cour</a>
                 <form>
                     <div>
                         <input
@@ -31,7 +33,7 @@
                     </div>
                 </form>
                 <a href="./page_connexion.php" class="button-55">Se connecter</a>
-                <a href="./selection.php" class="button-56" style="color: white;"> S'inscrire</a>
+                <a href="./inscription.php" class="button-56" style="color: white;"> S'inscrire</a>
                 <div class="profil">
                     <?php 
                         /*require_once('co_bdd.php');  
@@ -51,6 +53,53 @@
                 </div>
             </ul>
         </nav>
+        <?php       
+            session_start();
+            if(isset($_SESSION['login'])) {
+                $query = "SELECT NomFormation, DescFormation, lieu, competence, duree, cout, materiau, nbEleve FROM Formation";
+                $result = $query->fetchAll(PDO::FETCH_ASSOC);
+                $count = $query->rowCount();
+            
+
+            echo "<h2> Voici la liste des cours disponible :" . "</h2>";
+            echo '<div class="cours">';
+            while($row = $count) {    
+                echo '<div class="sujet">';
+                echo '<img src="./book.png" alt="livre">';
+                echo '<p> {$row["NomFormation"]} </p>';
+                echo '</div>';
+                echo '<div class="description">';
+                echo '<p> {$row["DescFormation"]} </p>';
+                echo '</div>';
+                echo '<div class="lieu">';
+                echo '<img src="./location.png" alt="location">';
+                echo '<p> {$row["lieu"]} </p>';
+                echo '</div>';
+                echo '<div class="prof">';
+                echo '<img src="./teacher.png" alt="prof">';
+                echo '<p> {$row["lieu"]} </p>';
+                echo '</div>';
+                echo '<div class="competence">';
+                echo '<p> {$row["competence"]} </p>';
+                echo '</div>';
+                echo '<div class="duree">';
+                echo '<p> {$row["duree"]} </p>';
+                echo '</div>';
+                echo '<div class="cout">';
+                echo '<p> {$row["cout"]} </p>';
+                echo '</div>';
+                echo '<div class="materiau">';
+                echo '<p> {$row["materiau"]} </p>';
+                echo '</div>';
+                echo '<div class="nbEleve">';
+                echo '<p> {$row["nbEleve"]} </p>';
+                echo '</div>';
+                echo '<a href="./payer.php" class="button-56" style="color: white;"> Adhérer au cour </a>';
+            }
+            echo '</div>'; 
+            }
+
+        ?>
         <div class="cours">
             <div class="sujet">
                 <img src="./book.png" alt="livre">

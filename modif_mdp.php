@@ -1,6 +1,7 @@
 
-<?php 
-    //session_start() ;   
+<?php
+  include('./co_bdd.php');
+  //session_start() ;   
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@
   </head>
   <body class ='body-test'>
     <?php 
-    /*require_once('co_bdd.php');
+    /*
 
       if (isset($_GET['id'])&& (isset($_POST['validation'])) ){
             $id =$_GET['id'];
