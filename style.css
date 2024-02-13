@@ -24,9 +24,9 @@ body {
     padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h3, h4, h5, h6 {
     letter-spacing: 1.2px;
-    color: white;
+    color: black;
 }
 
 h1 {
@@ -37,6 +37,7 @@ h1 {
 h2 {
     font-size: 1.75em;
     text-align: center;
+    color: white;
     
 }
 
