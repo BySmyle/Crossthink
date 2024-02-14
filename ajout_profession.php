@@ -38,7 +38,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Création de tickets</title>
+        <title>Création de profession</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -72,9 +72,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                 <label for="materiau">Choississez les matériaux requis :</label>
                 <select id="materiau" required>
                     <option value="" style="text-align: center;">--- Choisir un matériau ---</option>
-                    <option value="ordi" style="text-align: center;">Ordinateur</option>
-                    <option value="calculatrice" style="text-align: center;">Calculatrice</option>
-                    <option value="regle" style="text-align: center;">Outils de constructions de formes (règles, équerre, etc)</option>
+                    <option value="Ordinateur" style="text-align: center;">Ordinateur</option>
+                    <option value="Calculatrice" style="text-align: center;">Calculatrice</option>
+                    <option value="Outils de constructions de formes (règles, équerre, etc)" style="text-align: center;">Outils de constructions de formes (règles, équerre, etc)</option>
                 </select>
                 <input type="number" name="nbEleve" step="1" min="0" max="100" placeholder="Nombre d'élèves par cours" required style="text-align: center;">
                 <input type="submit" value="Valider" name="boutton-valider">

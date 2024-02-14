@@ -20,7 +20,7 @@
             <img src="./logo.png" alt="Logo">
         </div>
             <ul class="navbar-menu">
-                <a href="./ajout_cours.php" class="button-56" style="color: white;"><img src="./add.png" alt="" style="margin-right: 10px;">Ajouter un cour</a>
+                <a href="./ajout_formation.php" class="button-56" style="color: white;"><img src="./add.png" alt="" style="margin-right: 10px;">Ajouter une formation</a>
                 <form>
                     <div>
                         <input
@@ -53,79 +53,20 @@
             </ul>
         </nav>
         <?php
-            if(isset($_SESSION['login'])) {
-                $query = "SELECT NomFormation, DescFormation, lieu, competence, duree, cout, materiau, nbEleve FROM Formation";
-                $result = $query->fetchAll(PDO::FETCH_ASSOC);
-                $count = $query->rowCount();
+            $query = $lien->prepare("SELECT LibelSujet FROM Sujet");
+            $query->execute();
             
-                echo "<h2> Voici la liste des cours disponible :" . "</h2>";
-                echo '<div class="cours">';
-                while($row = $count) {    
-                    echo '<div class="sujet">';
-                    echo '<img src="./book.png" alt="livre">';
-                    echo '<p> {$row["NomFormation"]} </p>';
-                    echo '</div>';
-                    echo '<div class="description">';
-                    echo '<p> {$row["DescFormation"]} </p>';
-                    echo '</div>';
-                    echo '<div class="lieu">';
-                    echo '<img src="./location.png" alt="location">';
-                    echo '<p> {$row["lieu"]} </p>';
-                    echo '</div>';
-                    echo '<div class="prof">';
-                    echo '<img src="./teacher.png" alt="prof">';
-                    echo '<p> {$row["lieu"]} </p>';
-                    echo '</div>';
-                    echo '<div class="competence">';
-                    echo '<p> {$row["competence"]} </p>';
-                    echo '</div>';
-                    echo '<div class="duree">';
-                    echo '<p> {$row["duree"]} </p>';
-                    echo '</div>';
-                    echo '<div class="cout">';
-                    echo '<p> {$row["cout"]} </p>';
-                    echo '</div>';
-                    echo '<div class="materiau">';
-                    echo '<p> {$row["materiau"]} </p>';
-                    echo '</div>';
-                    echo '<div class="nbEleve">';
-                    echo '<p> {$row["nbEleve"]} </p>';
-                    echo '</div>';
-                    echo '<a href="./payer.php" class="button-56" style="color: white;"> Adhérer au cour </a>';
-                }
-                echo '</div>'; 
+            echo "<h2 style='color: black;'> Voici la liste de toutes les formations disponible : ".  "</h2>";
+            while($row = $query->fetch()) {
+                echo '<div class="cours">'
+                    ."<div class='sujet' style='margin-left: 5em;'>
+                    <img src='./book.png' alt='livre'>
+                    <p style='margin-left: 1em;'> {$row['LibelSujet']} </p>
+                    </div>\n
+                    <a href='./cours_dispo.php' class='button-56'>Voir les cours</a>
+                    </div>";
             }
-
         ?>
-        <div class="cours">
-            <div class="sujet">
-                <img src="./book.png" alt="livre">
-                <p style="margin-left: 1em;">
-                    Maths
-                </p>
-            </div>
-            <div class="lieu">
-                <img src="./location.png" alt="location">
-                <p style="margin-left: 1em;">
-                    Marseille(8ème)
-                </p>
-            </div>
-            <div class="prof">
-                <img src="./teacher.png" alt="prof">
-                <p style="margin-left: 1em;">
-                    Professeur : M. POLOCHON
-                </p>
-            </div>
-            <div class="eleves">
-                <img src="./user.png" alt="eleves">
-                <p>
-                    Nombre d'élèves disponible dans le cour : 30
-                </p>
-            </div>
-            <form action="">
-                <input type="submit" value="Adhérer au cour" name="boutton-valider">
-            </form>
-        </div>
         <footer>
             <h1 style="color: white;"> NOUS CONTACTER </h1>
             <h2>Suivez nous sur nos réseaux : </h2>

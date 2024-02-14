@@ -1,44 +1,8 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edit this template
--->
-<?php
-    include('./co_bdd.php');
-    session_start(); 
-
-    if(isset($_POST['boutton-valider'])){ 
-        if(isset($_POST['NomFormation']) && isset($_POST['DescFormation']) && isset($_POST['lieu']) && isset($_POST['competence']) && isset($_POST['duree']) && isset($_POST['cout']) && isset($_POST['materiau']) && isset($_POST['nbEleve'])) {  
-            // Récupération des données du formulaire
-            $titre = $_POST['NomFormation'];
-            $description = $_POST['DescFormation'];
-            $lieu = $_POST['lieu'];
-            $competence = $_POST['competence'];
-            $duree = $_POST['duree'];
-            $cout = $_POST['cout'];
-            $materiau = $_POST['materiau'];
-            $nbEleve = $_POST['nbEleve'];
-            // $sujetId = $_SESSION['sujetId']; // Récupérer l'ID du suejt de formation
-
-            // Requête d'insertion des données dans la table tickets
-            $query = $lien->prepare("INSERT INTO Formation (NomFormation, DescFormation, lieu, competence, duree, cout, materiau, nbEleve) VALUES (NomFormation=? , DescFormation=?, lieu=?, competence=?, duree=?, cout=?, materiau=?, nbEleve=?/*,'$enseignant_id')*/");
-            $query = bindParam(1, $titre);
-            $query = bindParam(2, $description);
-            $query = bindParam(3, $lieu);
-            $query = bindParam(4, $competence);
-            $query = bindParam(5, $duree);
-            $query = bindParam(6, $cout);
-            $query = bindParam(7, $materiau);
-            $query = bindParam(8, $nbEleve);
-            $result = $query->fetchAll(PDO::FETCH_ASSOC);
-            $count = $query->rowCount();
-        }
-    }
-?>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Création de tickets</title>
+        <title>Création de cours</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -47,11 +11,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
     </head>
     <body>
         
-        <form class="contact-form" method="POST" action="">
+        <form class="contact-form" method="POST" action="./new_cours.php">
                 <input type="text" name="NomFormation" placeholder="Titre" required style="text-align: center;"/>
-                <input type="text" name="DescFormation" placeholder="Description" required style="text-align: center;"/><div class="center-form">
+                <input type="text" name="DescFormation" placeholder="Description" required style="text-align: center;"/>
+                <input type="text" name="lieu" placeholder="Mettre le lieu de votre formation" required style="text-align: center;">
                 <label for="etude">Choississez le niveau d'étude requis :</label>
-                <select id="competence" required>
+                <select id="competence" name="competence" required>
                     <option value="" style="text-align: center;">--- Choisir un niveau ---</option>
                     <option value="3eme" style="text-align: center;">3ème</option>
                     <option value="2nd" style="text-align: center;">2nd</option>
@@ -70,11 +35,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                     <input type="date" placeholder="Date  Fin du cours" value="<?php //if (isset($_POST['date_fin_cours'])){echo $_POST['date_fin_cours'];} ?>" maxlength="10" name="date_fin_cours" id="date_fin_cours" class="calendrier" onClick="ds_sh(this);" required><br>
                 </form>-->
                 <label for="materiau">Choississez les matériaux requis :</label>
-                <select id="materiau" required>
+                <select id="materiau" name="materiau" required>
                     <option value="" style="text-align: center;">--- Choisir un matériau ---</option>
-                    <option value="ordi" style="text-align: center;">Ordinateur</option>
-                    <option value="calculatrice" style="text-align: center;">Calculatrice</option>
-                    <option value="regle" style="text-align: center;">Outils de constructions de formes (règles, équerre, etc)</option>
+                    <option value="Ordinateur" style="text-align: center;">Ordinateur</option>
+                    <option value="Calculatrice" style="text-align: center;">Calculatrice</option>
+                    <option value="Outils de constructions de formes (règles, équerre, etc)" style="text-align: center;">Outils de constructions de formes (règles, équerre, etc)</option>
+                    <option value="Aucun"style="text-align: center;">Aucun</option>
                 </select>
                 <input type="number" name="nbEleve" step="1" min="0" max="100" placeholder="Nombre d'élèves par cours" required style="text-align: center;">
                 <input type="submit" value="Valider" name="boutton-valider">

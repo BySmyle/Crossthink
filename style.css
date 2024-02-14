@@ -9,7 +9,12 @@
 tr{
     color: black;
     height: 10vh;
-    border: 10px solid black;
+    border: 5px solid black;
+}
+
+tr>td{
+    text-align: center;
+    padding: 0 0.5em 0 0.5em;
 }
 
 td>a{
@@ -197,12 +202,12 @@ input[type="submit"]:hover {
 
 .cours{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin: 0 auto;
     margin-bottom: 10px;
     background-color: #e1e1e1;
     text-align: center;
-    width: 80%;
+    width: 20%;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -212,7 +217,6 @@ input[type="submit"]:hover {
 .sujet{
     display: flex;
     flex-direction: row;
-    margin-top: 2em;
     margin-right: -15em;
 }
 

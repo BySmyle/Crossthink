@@ -14,7 +14,9 @@ require_once 'co_bdd.php';
 
             if($utilisateurExistant->rowCount() > 0 ){
                 $infosUtilisateur = $utilisateurExistant->fetch();
-                //if(password_verify($utilisateur_mdp, $infosUtilisateur['mdp'])){
+                echo 'tu vois bien que cela ne fonctionne pas?';
+                if(password_verify($mdp, $infosUtilisateur['MdpUti'])){
+                    echo 'non tjrs pas?';
                     $_SESSION['auth'] = true;
                     $_SESSION['EmailUti'] = $infosUtilisateur['EmailUti'];
                     $_SESSION['MdpUti'] = $infosUtilisateur['MdpUti'];
@@ -24,7 +26,7 @@ require_once 'co_bdd.php';
                  //si la connexion est réussie, rediriger vers la page d'accueil "index.php"
                  header('Location: ./index.php');
                  exit;
-                //}
+                }
                 
              } else {
                  $errorMsg = "Votre pseudo est incorrect";

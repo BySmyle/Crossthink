@@ -1,9 +1,3 @@
-
-<?php
-  include('./co_bdd.php');
-  //session_start() ;   
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,22 +8,10 @@
       <link rel="stylesheet" href="style.css">
   </head>
   <body class ='body-test'>
-    <?php 
-    /*
-
-      if (isset($_GET['id'])&& (isset($_POST['validation'])) ){
-            $id =$_GET['id'];
-            $msg_eleves= htmlspecialchars($_POST['msg_prof']); 
-            //connection à la base de donnés sql
-            $query = "UPDATE messages SET message = ' $msg_eleves' WHERE id_messages =$id" ; //on change la date du jour selon l'id de la consultation
-            $req =  mysqli_query($lien ,$query);
-            header("Location:page_eleve.php") ;
-      }*/
-    ?>
     <section>
-      <form class="contact-form" method="POST"> 
-            <input type="password" name="nvMdp" minlength="8" placeholder="Votre nouveau mot de passe" required style="text-align: center;">
-            <input type="password" name="vaiderNvMdp" minlength="8" placeholder="Validez votre nouveau mot de passe" required style="text-align: center;">
+      <form class="contact-form" action="./new_mdp.php" method="POST"> 
+            <input type="password" name="MdpUti" minlength="8" placeholder="Votre nouveau mot de passe" required style="text-align: center;">
+            <input type="password" name="validerMdpUti" minlength="8" placeholder="Validez votre nouveau mot de passe" required style="text-align: center;">
             <input type="submit" value="Valider" name="validation">
       </form>
       </section>
