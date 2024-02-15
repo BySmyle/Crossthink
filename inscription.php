@@ -30,8 +30,8 @@
                 </div>
                 <a href="./ajout_profession.php" class="button-56" style="color: white;"><img src="./add.png" alt="">Ajouter une profession</a>
                 <div class="center-form">
-                    <label for="niveauEtude">Choississez votre niveau d'étude :</label>
-                    <select id="niveauEtude" name="niveauEtude" required>
+                    <label for="niveauEtude">Choississez votre niveau d'étude (si vous êtes un élève):</label>
+                    <select id="niveauEtude" name="niveauEtude">
                         <option value="" style="text-align: center;">--- Étude en cours ---</option>
                         <option value="3eme" style="text-align: center;">3ème</option>
                         <option value="2nd" style="text-align: center;">2nd</option>

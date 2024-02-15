@@ -1,5 +1,5 @@
 <?php
-    include('./co_bdd.php');  
+    require_once './co_bdd.php';  
     session_start();
 ?>
 <!DOCTYPE html>
@@ -37,16 +37,19 @@
                 <a href="./inscription.php" class="button-56" style="color: white;"> S'inscrire</a>
                 <div class="profil">
                     <?php 
-                        /*if(isset($_SESSION['login'])) {
-                            $Elogin = $_SESSION['login'];
-                            $mdp = $_SESSION['mdp'];
-                            $query = "SELECT * FROM enseignants WHERE E_id = '$Elogin' AND E_mdp = '$mdp'";
-                            $result = mysqli_query($lien, $query);
-                            if(!$result) {
-                                exit("Error executing query: " . mysqli_error($lien));
-                            }
-                            $enseignant = mysqli_fetch_assoc($result);
-                            echo "<p>" . $utilisateur['E_nom'] . " " . $utilisateur['E_prenom'] . " !</p>";
+                        /*$mail = htmlspecialchars($_POST['EmailUti']);
+                        $mdp = htmlspecialchars($_POST['MdpUti']);            
+                        $mdpHash = hash('sha256',$mdp.$sel);
+                            $query = $lien->prepare("SELECT * FROM Utilisateur WHERE E_id=? AND E_mdp=?");
+                            $query->execute(array($mail, $mdpHash));
+                            if($query->rowCount() > 0 ){
+                                $infosUtilisateur = $query->fetch();
+                                    $_SESSION['auth'] = true;
+                                    $_SESSION['EmailUti'] = $infosUtilisateur['EmailUti'];
+                                    $_SESSION['MdpUti'] = $infosUtilisateur['MdpUti'];
+                                    $_SESSION['NomUti'] = $infosUtilisateur['NomUti'];
+                                    $_SESSION['PrenomUti'] = $infosUtilisateur['PrenomUti'];
+                                    echo "<p>Bienvenu(e) sur notre site " . $infosUtilisateur['NomUti'] . " " . $infosUtilisateur['PrenomUti'] . " !</>";
                         }*/
                     ?>
                 </div>

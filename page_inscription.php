@@ -1,4 +1,5 @@
 <?php
+session_start();
     require_once 'co_bdd.php';
 
     if(isset($_POST['boutton-valider'])){ 
