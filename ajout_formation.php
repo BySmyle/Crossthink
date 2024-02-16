@@ -10,11 +10,15 @@
         <link href="./style.css" rel="stylesheet"/>
     </head>
     <body>
-        
-        <form class="contact-form" method="POST" action="./new_formation.php">
-                <input type="text" name="LibelSujet" placeholder="Titre" required style="text-align: center;"/>
-                <input type="submit" value="Valider" name="boutton-valider">
-        </form>
+        <section class="about">
+            <div class="container">
+                    <h1> Page de création de formation</h1>
+                    <form class="contact-form" method="POST" action="./new_formation.php">
+                            <input type="text" name="LibelSujet" placeholder="Nom de la formation" required style="text-align: center;"/>
+                            <input type="submit" value="Valider" name="boutton-valider">
+                    </form>
+            </div>
+        </section>
     </body>
     <script src="./script.js"></script>
 </html>

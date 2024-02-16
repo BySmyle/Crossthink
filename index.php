@@ -55,6 +55,7 @@
                 </div>
             </ul>
         </nav>
+        <!-- affiche les formations ajoutée par l'utilisateur à la suites des formations déjà existante -->
         <?php
             $query = $lien->prepare("SELECT LibelSujet FROM Sujet");
             $query->execute();
@@ -66,7 +67,7 @@
                     <img src='./book.png' alt='livre'>
                     <p style='margin-left: 1em;'> {$row['LibelSujet']} </p>
                     </div>\n
-                    <a href='./cours_dispo.php' class='button-56'>Voir les cours</a>
+                    <a href='./cours_dispo.php' class='button-56' style='text-decoration: none;'>Voir les cours</a>
                     </div>";
             }
         ?>

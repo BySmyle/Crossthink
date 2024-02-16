@@ -8,14 +8,16 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body class ='body-test'>
-        <section class="validation_delete"><!-- formulaire pour confirmer la suppression d'un rdv donné -->
-        <form method="POST" action="./delete_formation.php" class="creation_rdv">  
-            <label> Etes vous sur de vouloir supprimer ce cours?</label>
-            <div class="button_delete"> 
-                <button class="button-56" name="validation">oui</button>
-                <button class="button-56" name="refus">non</button>
+        <section class="about">
+            <div class="container">
+                <form method="POST" action="./delete_formation.php" class="creation_rdv">  
+                    <label> Etes vous sur de vouloir supprimer ce cours?</label>
+                    <div class="button_delete"> 
+                        <button class="button-56" name="validation">oui</button>
+                        <button class="button-56" name="refus">non</button>
+                    </div>
+                </form>
             </div>
-        </form>
-    </section>
+        </section>
     </body>
 </html>
