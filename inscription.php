@@ -54,6 +54,15 @@
                             <option value="1ereBTS" style="text-align: center;">1èreBTS</option>
                             <option value="2ndBTS" style="text-align: center;">2ndBTS</option>
                             <option value="licence" style="text-align: center;">Licence</option>
+                            <!-- affiche les niveaux ajoutée par l'utilisateur à la suites des niveaux déjà existante -->
+                            <?php
+                                    $query = $lien->prepare("SELECT libelNiveau FROM niveauEtude");
+                                    $query->execute();
+                                    
+                                    while($row = $query->fetch()) {
+                                        echo "<option value='{$row["libelNiveau"]}' style='text-align: center;'> {$row["libelNiveau"]} </option>";
+                                    }
+                                ?>
                         </select>
                     </div>
                     <input type="password" name="MdpUti" minlength="8" placeholder="Mot de passe" required style="text-align: center;">
