@@ -13,14 +13,14 @@ require_once 'co_bdd.php';
     echo '<p style="margin-left: 51em; margin-top: -1.85em; color: red;"><B>Les cours sont payant</B></p>';
     echo '<a href="./ajout_cours.php" class="button-56" style="color: white; text-decoration: none;"><img src="./add.png" alt="" style="margin-right: 10px;">Ajouter un cours</a>';
     echo '<table style="margin-top: 2em;" border 1 eifth =100%>';
-    echo  "<tr> <td> ID Cours </td><td> Nom du cours </td><td>Description du cours</td><td>Lieu du cours</td><td>Compétences requises par l'élèves</td><td>Duree du cours<td>Coût du cours</td><td>Matériaux requis<td>Nombre d'élévèes par cours</td><td>Adérer au cours<td>Supprimer le cours</td>\n " ;
+    echo  "<tr><td> Nom du cours </td><td>Description du cours</td><td>Lieu du cours</td><td>Professeur référent</td><td>Compétences requises par l'élèves</td><td>Duree du cours<td>Coût du cours</td><td>Matériaux requis<td>Nombre d'élévèes par cours</td><td>Adérer au cours<td>Supprimer le cours</td>\n " ;
     
     while($row = $query->fetch()) {
         echo "<tr>"
-            ."<td> {$row['IdFormation']} </td>
-              <td> {$row['NomFormation']} </td>
+            ."<td> {$row['NomFormation']} </td>
               <td> {$row['DescFormation']} </td>
               <td> {$row['lieu']} </td>
+              <td> {$row['idUti']} </td>
               <td> {$row['competence']} </td>
               <td> {$row['duree']} </td>
               <td> {$row['cout']} </td>

@@ -65,6 +65,7 @@
                                 ?>
                         </select>
                     </div>
+                    <a href="./ajout_niveau.php" class="button-56" style="text-decoration: none; color: white;"><img src="./add.png" alt="">Ajouter un niveau d'étude</a>
                     <input type="password" name="MdpUti" minlength="8" placeholder="Mot de passe" required style="text-align: center;">
                     <input type="submit" value="Valider" name="boutton-valider">
                     <p>

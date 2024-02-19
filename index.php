@@ -33,8 +33,10 @@
                         <span class="validity"></span>
                     </div>
                 </form>
-                <a href="./connexion.php" class="button-55">Se connecter</a>
-                <a href="./inscription.php" class="button-56" style="color: white;"> S'inscrire</a>
+                <div id="connecter">
+                    <a href="./connexion.php" class="button-55">Se connecter</a>
+                    <a href="./inscription.php" class="button-56" style="color: white;"> S'inscrire</a>
+                </div>
                 <div class="profil">
                     <?php 
                         /*$mail = htmlspecialchars($_POST['EmailUti']);
@@ -99,4 +101,5 @@
             <h2>© 2024</h2>
         </footer>
     </body>
+    <script src="./script.js"></script>
 </html>
