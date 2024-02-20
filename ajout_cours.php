@@ -1,5 +1,6 @@
 <?php
     require_once './co_bdd.php';
+    session_start();
 ?>
 <!DOCTYPE html>
 <html>

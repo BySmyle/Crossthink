@@ -17,7 +17,6 @@ require_once 'co_bdd.php';
                 $infosUtilisateur = $utilisateurExistant->fetch();
 
                 if($mdpHash == $infosUtilisateur['MdpUti']){
-                    $_SESSION['auth'] = true;
                     $_SESSION['EmailUti'] = $infosUtilisateur['EmailUti'];
                     $_SESSION['MdpUti'] = $infosUtilisateur['MdpUti'];
                     $_SESSION['NomUti'] = $infosUtilisateur['NomUti'];

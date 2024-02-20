@@ -19,7 +19,7 @@
             $creerCour->execute(array($titre, $description, $lieu, $competence, $duree, $cout, $materiau, $nbEleve));
             $infosCour = $creerCour->fetch();
 
-            header('Location:cour_dispo.php');
+            header('Location:cours_dispo.php');
         }
     }
 ?>
