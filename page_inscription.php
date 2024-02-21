@@ -31,7 +31,6 @@ session_start();
                     $infosUtilisateur = $obtenirinfoUtilisateur->fetch();
         
                     // Authentifier l'utilisateur sur le site et récupérer ses données dans des sessions
-                    $_SESSION['auth'] = true;
                     $_SESSION['EmailUti'] = $infosUtilisateur['EmailUti'];
                     $_SESSION['MdpUti'] = $infosUtilisateur['MdpUti'];
                     $_SESSION['NomUti'] = $infosUtilisateur['NomUti'];

@@ -20,7 +20,7 @@
             <img src="./logo.png" alt="Logo">
         </div>
             <ul class="navbar-menu">
-                <a href="./connexion.php" class="button-56" style="color: white;"><img src="./add.png" alt="" style="margin-right: 10px;">Ajouter une formation</a>
+                <a href="./ajout_formation.php" class="button-56" style="color: white;"><img src="./add.png" alt="" style="margin-right: 10px;">Ajouter une formation</a>
                 <form>
                     <div>
                         <input
@@ -33,8 +33,19 @@
                         <span class="validity"></span>
                     </div>
                 </form>
-                <a href="./connexion.php" class="button-55">Se connecter</a>
-                <a href="./inscription.php" class="button-56" style="color: white;"> S'inscrire</a>
+                <div class="profil">
+                    <?php 
+                        $Email = $_SESSION['EmailUti'];
+                        $nom = $_SESSION['NomUti'];
+                        $prenom = $_SESSION['PrenomUti'];
+                        $query_uti = $lien->prepare("SELECT NomUti, PrenomUti FROM Utilisateur WHERE EmailUti=?");
+                        $query_uti->execute(array($Email));
+                        while($rowan = $query_uti->fetch()){
+                            echo "<p style='margin-top: 1em;'> Votre profil : " . $rowan['NomUti'] . " " . $rowan['PrenomUti'] . " </p>";
+                        }
+                    ?>
+                </div>
+                <a href="./index.php" style="color: black">Se déconnecter</a>
             </ul>
         </nav>
         <!-- affiche les formations ajoutée par l'utilisateur à la suites des formations déjà existante -->
@@ -45,10 +56,10 @@
             echo "<h2 style='color: black;'> Voici la liste de toutes les formations disponible : ".  "</h2>";
             while($row = $query->fetch()) {
                 echo '<div class="cours">'
-                    ."<form class='sujet' method='POST' action='./connexion.php'>
-                        <p name='IdSujet'> {$row['IdSujet']} </p>
+                    ."<form class='sujet' method='POST' action='./cours_dispo.php'>
+                        <p name='IdSujet'style='margin-right: 1em;'> {$row['IdSujet']} </p>
                         <input type='text' value='{$row['IdSujet']}' name='IdSujet' hidden>
-                        <p> {$row['LibelSujet']} </p>
+                        <p style='margin-left: 1em;'> {$row['LibelSujet']} </p>
                         <input type='submit' value='Voir les cours' name='boutton-valider'>
                     </from>\n
                     </div>";

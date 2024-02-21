@@ -23,7 +23,7 @@ require_once 'co_bdd.php';
                     $_SESSION['PrenomUti'] = $infosUtilisateur['PrenomUti'];
                      
                         //si la connexion est réussie, rediriger vers la page d'accueil "index.php"
-                    header('Location: index.php');
+                    header('Location: index_connecter.php');
                     exit;
                 }
                 else{

@@ -8,7 +8,7 @@
             
             $creerSujet = $lien->prepare("INSERT INTO Sujet (LibelSujet) VALUES (?)");
             $creerSujet->execute(array($titre));
-            header('Location:index.php');
+            header('Location:index_connecter.php');
         }
     }
 ?>
