@@ -9,15 +9,22 @@ if(isset($_POST['boutton-valider'])){
         $Email = $_SESSION['EmailUti'];
         $nom = $_SESSION['NomUti'];
         $prenom = $_SESSION['PrenomUti'];
+
+        $query_sujet = $lien->prepare("SELECT * FROM Sujet WHERE IdSujet=?");
+        $query_sujet->execute(array($id_sujet));
+
         $query_uti = $lien->prepare("SELECT NomUti FROM Utilisateur WHERE EmailUti=?");
         $query_uti->execute(array($Email));
 
-        $query = $lien->prepare("SELECT NomFormation, DescFormation, lieu, competence, duree, cout, materiau, nbEleve FROM Formation WHERE IdSujet=?");
+        $query = $lien->prepare("SELECT NomFormation, DescFormation, lieu, competence, duree, cout, materiau, nbEleve, IdSujet FROM Formation WHERE IdSujet=?");
         $query->execute(array($id_sujet));
 
         echo "<title>Liste des cours</title>";
         echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />';
         echo '<link href="./style.css" rel="stylesheet"/>';
+        while($rowy = $query_sujet->fetch()){
+            echo "<p style='color: black;'>{$rowy['IdSujet']} {$rowy['LibelSujet']} </p>";
+        }
         echo "<h2 style='color: black;'> Voici la liste de vos cours :".  "</h2>";
         echo "<span style='margin-left: 33em; color: red; font-size: 1.5em;'>&#x26A0</span>";
         echo '<p style="margin-left: 51em; margin-top: -1.85em; color: red;"><B>Les cours sont payant</B></p>';

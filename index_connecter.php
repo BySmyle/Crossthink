@@ -62,7 +62,7 @@
                         <p style='margin-left: 1em;'> {$row['LibelSujet']} </p>
                         <input type='submit' value='Voir les cours' name='boutton-valider'>
                     </from>\n
-                    </div>";
+                </div>";
             }
         ?>
         <footer>

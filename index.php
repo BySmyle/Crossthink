@@ -46,12 +46,12 @@
             while($row = $query->fetch()) {
                 echo '<div class="cours">'
                     ."<form class='sujet' method='POST' action='./connexion.php'>
-                        <p name='IdSujet'> {$row['IdSujet']} </p>
+                        <p name='IdSujet'style='margin-right: 1em;'> {$row['IdSujet']} </p>
                         <input type='text' value='{$row['IdSujet']}' name='IdSujet' hidden>
-                        <p> {$row['LibelSujet']} </p>
+                        <p style='margin-left: 1em;'> {$row['LibelSujet']} </p>
                         <input type='submit' value='Voir les cours' name='boutton-valider'>
                     </from>\n
-                    </div>";
+                </div>";
             }
         ?>
         <footer>
