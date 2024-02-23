@@ -18,6 +18,17 @@
             <div class="container">
                 <h1> Page de création de cours</h1>
                 <form class="contact-form" method="POST" action="./new_cours.php">
+                        <?php
+                            $query_sujet = $lien->prepare("SELECT * FROM Sujet");
+                            $query_sujet->execute();
+                            
+                            echo "<label for='IdSujet'>Choississez le sujet de formation souhaiter (si votre sujet voulu n'existe pas allez dans l'accueil pour en créer un) :</label>";
+                            echo '<select id="IdSujet" name="IdSujet" required>';
+                            echo '<option value="" style="text-align: center;">--- Choisir le sujet de formation ---</option>';
+                            while($rowan = $query_sujet->fetch()) {
+                                echo "<option value='{$rowan["IdSujet"]}' style='text-align: center;'> {$rowan["LibelSujet"]} </option>";
+                            }
+                        ?>
                         <input type="text" name="NomFormation" placeholder="Titre" required style="text-align: center;"/>
                         <input type="text" name="DescFormation" placeholder="Description" required style="text-align: center;"/>
                         <input type="text" name="lieu" placeholder="Mettre le lieu de votre formation" required style="text-align: center;">

@@ -45,7 +45,7 @@
                         }
                     ?>
                 </div>
-                <a href="./index.php" style="color: black">Se déconnecter</a>
+                <a href="./index.php" style="color: black;">Se déconnecter</a>
             </ul>
         </nav>
         <!-- affiche les formations ajoutée par l'utilisateur à la suites des formations déjà existante -->

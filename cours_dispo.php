@@ -16,7 +16,7 @@ if(isset($_POST['boutton-valider'])){
         $query_uti = $lien->prepare("SELECT NomUti FROM Utilisateur WHERE EmailUti=?");
         $query_uti->execute(array($Email));
 
-        $query = $lien->prepare("SELECT NomFormation, DescFormation, lieu, competence, duree, cout, materiau, nbEleve, IdSujet FROM Formation WHERE IdSujet=?");
+        $query = $lien->prepare("SELECT IdFormation, NomFormation, DescFormation, lieu, competence, duree, cout, materiau, nbEleve, IdSujet FROM Formation WHERE IdSujet=?");
         $query->execute(array($id_sujet));
 
         echo "<title>Liste des cours</title>";
@@ -30,7 +30,7 @@ if(isset($_POST['boutton-valider'])){
         echo '<p style="margin-left: 51em; margin-top: -1.85em; color: red;"><B>Les cours sont payant</B></p>';
         echo '<a href="./ajout_cours.php" class="button-56" style="color: white; text-decoration: none;"><img src="./add.png" alt="" style="margin-right: 10px;">Ajouter un cours</a>';
         echo '<table style="margin-top: 2em;" border 1 eifth =100%>';
-        echo "<tr><td>Nom du cours</td><td>Description du cours</td><td>Lieu du cours</td><td>Professeur référent</td><td>Compétences requises par l'élèves</td><td>Duree du cours<td>Coût du cours</td><td>Matériaux requis<td>Nombre d'élévèes par cours</td><td>Adérer au cours</td><td>Supprimer le cours</td>\n " ;
+        echo "<tr><td>Nom du cours</td><td>Description du cours</td><td>Lieu du cours</td><td>Professeur référent</td><td>Niveau requis par l'élèves</td><td>Duree du cours<td>Coût du cours</td><td>Matériaux requis<td>Nombre d'élévèes par cours</td><td>Adérer au cours</td><td>Supprimer le cours</td>\n " ;
             while($rowan = $query_uti->fetch()){
                 while($row = $query->fetch()) {
                     echo "<tr>"
